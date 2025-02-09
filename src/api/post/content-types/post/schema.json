@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "required": true
+    },
+    "Author": {
+      "type": "text",
+      "required": true
+    },
+    "Category": {
+      "type": "text",
+      "required": true
+    },
+    "Excerpt": {
+      "type": "text",
+      "required": true
+    },
+    "Content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
