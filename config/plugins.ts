@@ -1,9 +1,10 @@
-export default () => ({});
+// config/plugins.js
+
 module.exports = ({ env }) => ({
-    // Other plugin configurations
     'users-permissions': {
       config: {
-        jwtSecret: env('JWT_SECRET'), // Read from environment variable
+        jwtSecret: env('JWT_SECRET'),
       },
     },
+    // Other plugin configurations can go here
   });
