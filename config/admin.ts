@@ -1,17 +1,28 @@
-export default ({ env }) => ({
+// config/admin.js
+module.exports = ({ env }) => ({
   auth: {
-    secret: env('ADMIN_JWT_SECRET', '85KMxL0F7Mkxc70n+grA4x1AjrVQy6MgbAi/LEV0e98WiZaPxzv5OPpcGbHMGQuHqY191vNYGRulv+Etr2JJ+A=='),
+    secret: env('ADMIN_JWT_SECRET'),
   },
   apiToken: {
-    salt: env('API_TOKEN_SALT', 'mo1L0Cm7+XMDguXtBI9O8w=='),
+    salt: env('API_TOKEN_SALT'),
   },
   transfer: {
     token: {
-      salt: env('TRANSFER_TOKEN_SALT', 'fCD75FxZpuDFtmeAMpAcvA=='),
+      salt: env('TRANSFER_TOKEN_SALT'),
     },
   },
   flags: {
-    nps: env.bool('FLAG_NPS', true),
-    promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+    nps: env.bool('FLAG_NPS', false),
+    promoteEE: env.bool('FLAG_PROMOTE_EE', false),
+  },
+  // Add these settings to reduce memory usage
+  watchIgnoreFiles: [
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/.git/**',
+    '**/public/**',
+  ],
+  admin: {
+    autoOpen: false,
   },
 });
